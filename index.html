@@ -1,110 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Botões Estilizados</title>
+    <style>
+        /* Configurações Gerais e Centralização */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #bdc3c7;
+        }
+
+        /* Área Principal */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            padding: 40px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-bottom: 30px;
+        }
+
+        /* Container dos Botões */
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+            justify-items: center;
+            align-items: center;
+        }
+
+        /* Estilização Base dos Botões (Bordas, Sombra, Centralização) */
+        .btn {
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px; /* Bordas arredondadas */
+            cursor: pointer;
+            transition: all 0.3s ease; /* Transição suave para o Hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Sombra padrão */
+            width: 140px;
+            text-align: center;
+        }
+
+        /* Cores Diferentes e Efeitos Hover para cada botão */
+        
+        /* 1. Entrar */
+        .btn-entrar {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn-entrar:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+        }
+
+        /* 2. Cadastrar */
+        .btn-cadastrar {
+            background-color: #9b59b6;
+            color: white;
+        }
+        .btn-cadastrar:hover {
+            background-color: #8e44ad;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(155, 89, 182, 0.3);
+        }
+
+        /* 3. Salvar */
+        .btn-salvar {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .btn-salvar:hover {
+            background-color: #27ae60;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3);
+        }
+
+        /* 4. Pesquisar */
+        .btn-pesquisar {
+            background-color: #f1c40f;
+            color: #333;
+        }
+        .btn-pesquisar:hover {
+            background-color: #d4ac0d;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(241, 196, 15, 0.3);
+        }
+
+        /* 5. Comprar */
+        .btn-comprar {
+            background-color: #e67e22;
+            color: white;
+        }
+        .btn-comprar:hover {
+            background-color: #d35400;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(230, 126, 34, 0.3);
+        }
+
+        /* 6. Excluir */
+        .btn-excluir {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .btn-excluir:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(231, 76, 60, 0.3);
+        }
+    </style>
+</head>
 <body>
 
-<div class="container">
-
     <header>
-        <h1>Página de Botões</h1>
-        <h2>Aluno: Seu Nome Aqui</h2>
+        <h1>Galeria de Botões Interativos</h1>
+        <p>Aluno: Seu Nome Aqui</p>
     </header>
 
-    <div style="margin-bottom:20px;">
-        <input type="text" id="nome" placeholder="Digite seu nome"
-        style="padding:10px; width:250px; border-radius:8px; border:1px solid #ccc;">
-    </div>
-
-    <main class="botoes">
-        <button class="entrar" onclick="entrar()">Entrar</button>
-        <button class="cadastrar" onclick="cadastrar()">Cadastrar</button>
-        <button class="salvar" onclick="salvar()">Salvar</button>
-        <button class="pesquisar" onclick="pesquisar()">Pesquisar</button>
-        <button class="comprar" onclick="comprar()">Comprar</button>
-        <button class="excluir" onclick="excluir()">Excluir</button>
+    <main>
+        <h2>Escolha uma ação:</h2>
+        
+        <div class="button-container">
+            <button class="btn btn-entrar">Entrar</button>
+            <button class="btn btn-cadastrar">Cadastrar</button>
+            <button class="btn btn-salvar">Salvar</button>
+            <button class="btn btn-pesquisar">Pesquisar</button>
+            <button class="btn btn-comprar">Comprar</button>
+            <button class="btn btn-excluir">Excluir</button>
+        </div>
     </main>
 
-    <p id="mensagem" style="margin-top:20px; font-size:18px;"></p>
-
-</div>
-
-<script>
-
-let pessoas = [];
-
-function pegarNome() {
-    return document.getElementById("nome").value.trim();
-}
-
-function mostrar(msg) {
-    document.getElementById("mensagem").innerHTML = msg;
-}
-
-function entrar() {
-    let nome = pegarNome();
-
-    if(nome === ""){
-        mostrar("Digite um nome para entrar.");
-    }else{
-        mostrar("Bem-vindo(a), " + nome + "!");
-    }
-}
-
-function cadastrar() {
-    let nome = pegarNome();
-
-    if(nome === ""){
-        mostrar("Digite um nome para cadastrar.");
-        return;
-    }
-
-    if(pessoas.includes(nome)){
-        mostrar(nome + " já está cadastrado.");
-    }else{
-        pessoas.push(nome);
-        mostrar(nome + " foi cadastrado com sucesso.");
-    }
-}
-
-function salvar() {
-    mostrar("Dados salvos com sucesso!");
-}
-
-function pesquisar() {
-    let nome = pegarNome();
-
-    if(nome === ""){
-        mostrar("Digite um nome para pesquisar.");
-        return;
-    }
-
-    if(pessoas.includes(nome)){
-        mostrar(nome + " foi encontrado.");
-    }else{
-        mostrar(nome + " não está cadastrado.");
-    }
-}
-
-function comprar() {
-    let nome = pegarNome();
-
-    if(nome === ""){
-        mostrar("Digite seu nome antes de comprar.");
-    }else{
-        mostrar(nome + " realizou uma compra!");
-    }
-}
-
-function excluir() {
-    let nome = pegarNome();
-
-    let indice = pessoas.indexOf(nome);
-vivihcavaleiro/trabalho-botoes
-    if(indice != -1){
-        pessoas.splice(indice,1);
-        mostrar(nome + " foi excluído.");
-    }else{
-        mostrar("Nome não encontrado.");
-    }
-}
-
-</script>
-
 </body>
+</html>
