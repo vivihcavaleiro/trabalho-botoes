@@ -1,0 +1,110 @@
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Página de Botões</h1>
+        <h2>Aluno: Seu Nome Aqui</h2>
+    </header>
+
+    <div style="margin-bottom:20px;">
+        <input type="text" id="nome" placeholder="Digite seu nome"
+        style="padding:10px; width:250px; border-radius:8px; border:1px solid #ccc;">
+    </div>
+
+    <main class="botoes">
+        <button class="entrar" onclick="entrar()">Entrar</button>
+        <button class="cadastrar" onclick="cadastrar()">Cadastrar</button>
+        <button class="salvar" onclick="salvar()">Salvar</button>
+        <button class="pesquisar" onclick="pesquisar()">Pesquisar</button>
+        <button class="comprar" onclick="comprar()">Comprar</button>
+        <button class="excluir" onclick="excluir()">Excluir</button>
+    </main>
+
+    <p id="mensagem" style="margin-top:20px; font-size:18px;"></p>
+
+</div>
+
+<script>
+
+let pessoas = [];
+
+function pegarNome() {
+    return document.getElementById("nome").value.trim();
+}
+
+function mostrar(msg) {
+    document.getElementById("mensagem").innerHTML = msg;
+}
+
+function entrar() {
+    let nome = pegarNome();
+
+    if(nome === ""){
+        mostrar("Digite um nome para entrar.");
+    }else{
+        mostrar("Bem-vindo(a), " + nome + "!");
+    }
+}
+
+function cadastrar() {
+    let nome = pegarNome();
+
+    if(nome === ""){
+        mostrar("Digite um nome para cadastrar.");
+        return;
+    }
+
+    if(pessoas.includes(nome)){
+        mostrar(nome + " já está cadastrado.");
+    }else{
+        pessoas.push(nome);
+        mostrar(nome + " foi cadastrado com sucesso.");
+    }
+}
+
+function salvar() {
+    mostrar("Dados salvos com sucesso!");
+}
+
+function pesquisar() {
+    let nome = pegarNome();
+
+    if(nome === ""){
+        mostrar("Digite um nome para pesquisar.");
+        return;
+    }
+
+    if(pessoas.includes(nome)){
+        mostrar(nome + " foi encontrado.");
+    }else{
+        mostrar(nome + " não está cadastrado.");
+    }
+}
+
+function comprar() {
+    let nome = pegarNome();
+
+    if(nome === ""){
+        mostrar("Digite seu nome antes de comprar.");
+    }else{
+        mostrar(nome + " realizou uma compra!");
+    }
+}
+
+function excluir() {
+    let nome = pegarNome();
+
+    let indice = pessoas.indexOf(nome);
+
+    if(indice != -1){
+        pessoas.splice(indice,1);
+        mostrar(nome + " foi excluído.");
+    }else{
+        mostrar("Nome não encontrado.");
+    }
+}
+
+</script>
+
+</body>
